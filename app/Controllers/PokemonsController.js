@@ -1,4 +1,5 @@
-import { pokemonsService } from "../Services/PokemonsService.js"
+import { pokeApiService } from "../Services/PokeApiService.js"
+import { sandboxService } from "../Services/SandboxService.js"
 
 
 
@@ -9,28 +10,26 @@ import { pokemonsService } from "../Services/PokemonsService.js"
 // private
 export class PokemonsController {
   constructor() {
+    pokeApiService.getPokemon()
+    sandboxService.getPokemon()
     
   }
 
   add(id) {
     console.log(`pokemonsController.add(${id})`)
-    pokemonsService.add(id)
+    sandboxService.add(id)
   }
 
   remove(id) {
     console.log(`pokemonsController.remove(${id})`)
-    pokemonsService.remove(id)
+    sandboxService.remove(id)
   }
 
-  viewPokemon(id) {
-    console.log(`pokemonsController.viewPokemon(${id})`)
+  viewStats(id) {
+    console.log(`pokemonsController.viewStats(${id})`)
   }
 
-  viewStats() {
-    console.log(`pokemonsController.viewStats()`)
-  }
-
-  viewDesc() {
-    console.log(`pokemonsController.viewDesc()`)
+  viewDesc(id) {
+    console.log(`pokemonsController.viewDesc(${id})`)
   }
 }
